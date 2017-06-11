@@ -9,7 +9,6 @@
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java'
 apply plugin: 'eclipse'
-mainClassName = "app.App"
 
 version = '1.0'
 sourceCompatibility = 1.8
@@ -44,4 +43,17 @@ jar {
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
+}
+
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+                'Implementation-Version': version,
+                'Main-Class': 'app.App'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }

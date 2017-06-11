@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="gradle-test:jar">
-    <output-path>$PROJECT_DIR$/build</output-path>
+    <output-path>$PROJECT_DIR$</output-path>
     <root id="archive" name="gradle-test.jar">
       <element id="module-output" name="gradle-test_main" />
       <element id="module-test-output" name="gradle-test_test" />
