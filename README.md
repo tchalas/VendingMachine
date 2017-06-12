@@ -11,12 +11,10 @@ gradle run
 If you can not install Gradle you can navigate to /build/libs and execute the Jar file of the App with running  
 java -jar [jarfile]
 
-# API
+# API Endpoints (All are POST)  
 
 The App runs by default at localhost:8002. And the root path is /machine, for example to intialize the machine you need to send a POST request to:  
 http://localhost:8002/machine/init  
-
-Endpoints (All are POST)
 
 /init (JSON, empty)  
 Initialize the machine  
@@ -38,7 +36,7 @@ Incest coin
 gets: The coin value {"Coin":"0.50"}
 returns: The inserted money sum or the product + change if ammount already inserted  
 
-/cancel  (empty/JSON) 
+/cancel  (empty/JSON)  
 Cancel operation  
 gets:  Nothing  
 returns: Cancels sellection and give back inserted money  
