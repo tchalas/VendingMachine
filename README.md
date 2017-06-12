@@ -20,15 +20,26 @@ Endpoints
 
 /init (JSON, empty)  
 Initialize the machine  
+receives: The machine manager password
+returns:  200 if init succeded
 
 /reset (JSON/JSON)  
 Reset the machine
+receives: The machine manager password
+returns:  200 and the collected money if succeded   
 
-/product  
+
+/product (JSON/JSON) 
 Select a product
+receives: The product name {"Product":"Water"}
+returns:  The product cost or the product + change if ammount already inserted  
 
-/coin  
+/coin (JSON/JSON) 
 Incest coin
+receives: The coin value {"Coin":"0.50"}
+returns:  
 
 /cancel  
 Cancel operation
+receives:  
+returns:  
