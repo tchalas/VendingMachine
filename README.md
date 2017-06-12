@@ -16,30 +16,29 @@ java -jar [jarfile]
 The App runs by default at localhost:8002. And the root path is /machine, for example to intialize the machine you need to send a POST request to:  
 http://localhost:8002/machine/init  
 
-Endpoints
+Endpoints (All are POST)
 
 /init (JSON, empty)  
 Initialize the machine  
-receives: The machine manager password
+gets: The machine manager password
 returns:  200 if init succeded
 
 /reset (JSON/JSON)  
-Reset the machine
-receives: The machine manager password
+Reset the machine  
+gets: The machine manager password  
 returns:  200 and the collected money if succeded   
 
-
-/product (JSON/JSON) 
-Select a product
-receives: The product name {"Product":"Water"}
+/product (JSON/JSON)   
+Select a product  
+gets: The product name {"Product":"Water"}  
 returns:  The product cost or the product + change if ammount already inserted  
 
-/coin (JSON/JSON) 
-Incest coin
-receives: The coin value {"Coin":"0.50"}
-returns:  
+/coin (JSON/JSON)   
+Incest coin    
+gets: The coin value {"Coin":"0.50"}
+returns: The inserted money sum or the product + change if ammount already inserted  
 
-/cancel  
-Cancel operation
-receives:  
-returns:  
+/cancel  (empty/JSON) 
+Cancel operation  
+gets:  Nothing  
+returns: Cancels sellection and give back inserted money  
