@@ -14,7 +14,7 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        Server jettyServer = new Server(8080);
+        Server jettyServer = new Server(8002);
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
         jettyServer.setHandler(context);
